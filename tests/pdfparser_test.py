@@ -1,9 +1,12 @@
 import unittest
 import sparser.pdfparser as pdfparser
 
-class ConfigTest(unittest.TestCase):
+class PDFParserTest(unittest.TestCase):
    def setUp(self):
-      self.p = pdfparser.PDFParser() 
+      self.p = pdfparser.PDFParser('eStmt_2018-03-08.pdf')
 
-   def test_foo(self):
-      self.p.foo()
+   def test_len(self):
+      self.assertEqual(len(self.p), 4)
+
+   def test_read_text(self):
+      print(self.p.text)
