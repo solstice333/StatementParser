@@ -1,15 +1,21 @@
-from PyPDF2 import PdfFileReader
+from pdfx import PDFx
 
 class PDFParser:
    def __init__(self, pdf):
-      self._pdf = PdfFileReader(pdf)
-
-   def parse(self):
-      raise RuntimeError("Not Yet Implemented")
-
-   def __len__(self):
-      return self._pdf.numPages
+      self._pdf = PDFx(pdf)
+      self._text = None
+      self._lines = None
 
    @property
    def text(self):
-      return [self._pdf.getPage(pn).extractText() for pn in range(0, len(self))]
+      if not self._text:
+         self._text = self._pdf.get_text()
+      return self._text
+
+   @property
+   def lines(self):
+      if not self._lines:
+         self._lines = self.text.splitlines()
+      return self._lines
+
+
