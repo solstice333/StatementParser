@@ -4,7 +4,8 @@ import os
 
 class PDFParserTest(unittest.TestCase):
    def setUp(self):
-      self.p = pdfparser.PDFParser('config.json', 'tests/mock_pdfs/boatest.pdf')
+      self.p = pdfparser.PDFParser(
+         'tests/config.json', 'tests/mock_pdfs/boatest.pdf')
 
    def test_read_text(self):
       pdf_lines = self.p.lines
@@ -60,3 +61,8 @@ class PDFParserTest(unittest.TestCase):
       self.assertEqual(pdf_lines[500], 'Make the most of your')
       self.assertEqual(pdf_lines[510], '')
 
+   def test_getitem(self):
+      extracted = [entry for entry in self.p]
+      self.assertEqual(extracted[0], ('Previous Balance', '$249.38'))
+      self.assertEqual(extracted[1], ('New Balance Total', '$653.72'))
+      self.assertEqual(extracted[2], ('Current Payment Due', '$653.72'))
