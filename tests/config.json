@@ -14,6 +14,6 @@
       "key": "Current Payment",
       "value": "(?:\\-)?\\$[\\d,]+\\.\\d+",
       "offset": 10,
-      "regex_semantics": "match"
+      "key_regex_semantics": "match"
    }
 ]
