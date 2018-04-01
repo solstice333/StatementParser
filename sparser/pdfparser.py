@@ -3,13 +3,17 @@ import re
 from pdfx import PDFx
 from collections.abc import Sequence
 from collections import namedtuple
+from sparser.config import Config
 
 class PDFParser(Sequence):
    def __init__(self, conf, pdf):
-      self._conf = conf
+      self._conf = conf if isinstance(conf, Config) else Config(conf)
       self._pdf = PDFx(pdf)
       self._text = None
       self._lines = None
+
+   def __del__(self):
+      self._pdf.stream.close()
 
    def _build_regex(self, idx, pat_key, case_ignore_key):
       spec = self._conf[idx]
