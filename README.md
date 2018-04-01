@@ -1,5 +1,22 @@
 # StatementParser
 
+## Description
+
+```
+usage: sparse.py [-h] [-c CONFIG] STATEMENT_PDF [STATEMENT_PDF ...]
+
+Statement PARSEr
+
+positional arguments:
+  STATEMENT_PDF         statement pdfs
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -c CONFIG, --config CONFIG
+                        json config defining how to parse the pdf. Defaults to
+                        config.json in the current working dir
+```
+
 ## Usage:
 
 First, unpack tests/mock_pdfs.7z into tests/mock_pdfs so that all pdfs are sitting in tests/mock_pdfs.
