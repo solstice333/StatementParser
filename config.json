@@ -1,0 +1,19 @@
+[
+   {
+      "key": "Previous Balance",
+      "value": "(?:\\-)?\\$[\\d,]+\\.\\d+"
+   },
+   {
+      "key": "new balance total",
+      "value": "(?:\\-)?\\$[\\d+,]+\\.\\d+",
+      "key_case_ignore": true,
+      "value_case_ignore": true,
+      "offset": 5
+   },
+   {
+      "key": "Current Payment",
+      "value": "(?:\\-)?\\$[\\d,]+\\.\\d+",
+      "offset": 10,
+      "regex_semantics": "match"
+   }
+]
