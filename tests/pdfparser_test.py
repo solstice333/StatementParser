@@ -1,9 +1,10 @@
 import unittest
 import sparser.pdfparser as pdfparser
+import os
 
 class PDFParserTest(unittest.TestCase):
    def setUp(self):
-      self.p = pdfparser.PDFParser('eStmt_2018-03-08.pdf')
+      self.p = pdfparser.PDFParser('config.json', 'tests/mock_pdfs/boatest.pdf')
 
    def test_read_text(self):
       pdf_lines = self.p.lines
