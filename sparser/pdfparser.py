@@ -38,18 +38,6 @@ class PDFParser(Sequence):
       }
       return semantics[spec.get(semantics_key)]
 
-   @property
-   def text(self):
-      if not self._text:
-         self._text = self._pdf.get_text()
-      return self._text
-
-   @property
-   def lines(self):
-      if not self._lines:
-         self._lines = self.text.splitlines()
-      return self._lines
-
    def _parse_through_pdf(self, key_parse_meth, val_parse_meth, offset):
       lines = self.lines
       kv = {'key': None, 'value': None}
@@ -71,6 +59,18 @@ class PDFParser(Sequence):
             break
 
       return Extracted(**kv)
+
+   @property
+   def text(self):
+      if not self._text:
+         self._text = self._pdf.get_text()
+      return self._text
+
+   @property
+   def lines(self):
+      if not self._lines:
+         self._lines = self.text.splitlines()
+      return self._lines
 
    def __getitem__(self, idx):
       spec = self._conf[idx]
