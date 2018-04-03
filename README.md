@@ -32,7 +32,7 @@ $ python3 -m unittest discover -s tests -v -p "*_test.py"
 For a simple demo, try:
 
 ```
-$ python3 sparse.py tests/mock_pdfs/boatest.pdf
+$ python3 sparse.py -c tests/config.json tests/mock_pdfs/boatest.pdf
 ```
 
 which should output:
