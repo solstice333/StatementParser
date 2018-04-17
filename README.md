@@ -26,8 +26,11 @@ At repo toplevel, to run unit tests:
 ```
 $ python3 -m pip install pdfx
 $ export PYTHONPATH=$PWD
-$ python3 -m unittest discover -s tests -v -p "*_test.py"
+$ cd tests
+$ python3 -m unittest discover -v -p "*_test.py"
 ```
+
+If using pycharm, right click on the `tests` folder in the project navigation and click on `Create 'Unittests in tests'`. In the pattern field, put `*_test.py`. Right click on the `tests` folder again, and click `Run 'Unittests in tests'`.
 
 For a simple demo, try:
 
