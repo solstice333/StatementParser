@@ -3,4 +3,4 @@ conf.json
 *.pdf
 .DS_Store
 venv/
-.idea/
+.idea/workspace.xml
