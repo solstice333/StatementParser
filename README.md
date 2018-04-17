@@ -30,7 +30,9 @@ $ cd tests
 $ python3 -m unittest discover -v -p "*_test.py"
 ```
 
-If using pycharm, right click on the `tests` folder in the project navigation and click on `Create 'Unittests in tests'`. In the pattern field, put `*_test.py`. Right click on the `tests` folder again, and click `Run 'Unittests in tests'`.
+If using pycharm, create a new virtual environment. Go to `preferences` -> `Project: StatementParser` -> `Project Interpreter`. Click the gear icon next to the `Project Interpreter` dropdown field and click `Add`. Select the `New Environment` radio button. Base interpreter should point to a Python 3.6.4 installation. Click `OK`. Open a pycharm terminal to install pdfx in the virtual environment: `$ python3 -m pip install pdfx`.
+
+Right click on the `tests` directory in the project navigation and click on `Create 'Unittests in tests'`. In the pattern field, put `*_test.py`. Click `OK`. Right click on the `tests` folder again, and click `Run 'Unittests in tests'`.
 
 For a simple demo, try:
 
