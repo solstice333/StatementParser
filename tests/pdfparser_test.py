@@ -5,7 +5,7 @@ import os
 class PDFParserTest(unittest.TestCase):
    def setUp(self):
       self.p = pdfparser.PDFParser(
-         'tests/config.json', 'tests/mock_pdfs/boatest.pdf')
+         'config.json', 'mock_pdfs/boatest.pdf')
 
    def test_read_text(self):
       pdf_lines = self.p.lines

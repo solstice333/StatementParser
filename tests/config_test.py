@@ -3,7 +3,7 @@ import sparser.config as config
 
 class ConfigTest(unittest.TestCase):
    def setUp(self):
-      self.c = config.Config('tests/config.json') 
+      self.c = config.Config('config.json')
 
    def test_getitem(self):
       self.assertEqual(self.c[0]['key'], 'Previous Balance')
